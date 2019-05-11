@@ -7,24 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.library.model.Classification;
-import com.library.service.ClassificationService;
-import com.library.service.impl.ClassificationServiceImpl;
-
 /**
- * Servlet implementation class classificationservlet
+ * Servlet implementation class AutherController
  */
-@WebServlet("/classificationservlet")
-public class classificationservlet extends HttpServlet {
+@WebServlet("/AutherController")
+public class AutherController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public classificationservlet() {
+    public AutherController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,21 +35,6 @@ public class classificationservlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		String mainclassid=request.getParameter("classificationId");
-		int a=Integer.parseInt(mainclassid);
-		String mainclassname =request.getParameter("classificationName");
-		
-		ApplicationContext context=new ClassPathXmlApplicationContext("classificationconfig.xml");
-		
-		ClassificationService classificationService=context.getBean("classificationService",ClassificationServiceImpl.class);
-		
-		Classification classification=new Classification();
-		
-		classification.setClassificationId(a);
-		classification.setClassificationName(mainclassname);
-		
- 		classificationService.addclassification(classification);
 		doGet(request, response);
 	}
 

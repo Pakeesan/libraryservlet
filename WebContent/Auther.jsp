@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-
-    <%@ include file = "refracsement/dasdborad.jsp" %>
+  pageEncoding="ISO-8859-1"%>
+<%@ include file = "refracsement/dasdborad.jsp" %>
 			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#exampleModal">AddClassification</button>
+				data-target="#exampleModal">AddAuther</button>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -44,7 +43,7 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">classification Add</h5>
+							<h5 class="modal-title" id="exampleModalLabel">AddAuther</h5>
 							<button type="button" class="close" data-dismiss="modal"
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -53,10 +52,11 @@
 						<div class="modal-body">
 						<form>
 					<div class="form-group">
-						<label for="formGroupExampleInput">classification name:</label> <input
+						<label for="formGroupExampleInput">Auther name:</label> <input
 							type="text" class="form-control" id="formGroupExampleInput"
-							placeholder="classification Name">
+							placeholder="Auther Name">
 					</div>
+					
 					
 					
 				</form>
@@ -64,7 +64,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Add</button>
+							<button type="button" class="btn btn-primary">AddAuther</button>
 						</div>
 					</div>
 				</div>

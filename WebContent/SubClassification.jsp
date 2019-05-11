@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@ include file="refracsement/dasdborad.jsp"%>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-	integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-	crossorigin="anonymous"></script>
 <button type="button" class="btn btn-primary" data-toggle="modal"
-	data-target="#exampleModal">AddClassification</button>
+	data-target="#exampleModal">AddSubClassification</button>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th scope="col">Id</th>
-			<th scope="col">Name</th>
+			<th scope="col">classification</th>
 			<th scope="col">Edit</th>
 			<th scope="col">Delite</th>
 		</tr>
@@ -47,7 +43,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">classification
+				<h5 class="modal-title" id="exampleModalLabel">Subclassification
 					Add</h5>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
@@ -55,41 +51,38 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="post" id="classificationForm">
+				<form>
 					<div class="form-group">
-						<label for="formGroupExampleInput">classification ID:</label> <input
-							type="text" class="form-control" id="formGroupExampleInput"
-							name="classificationId" placeholder="classification ID">
+						<label for="formGroupExampleInput">classification name:</label>
+
+						<div class="dropdown">
+
+
+							<button class="btn btn-secondary dropdown-toggle" type="button"
+								id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">select classification</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								<button class="dropdown-item" type="button">Maths</button>
+								<button class="dropdown-item" type="button">Science</button>
+								<button class="dropdown-item" type="button">Computer</button>
+							</div>
+						</div>
 					</div>
+
 					<div class="form-group">
-						<label for="formGroupExampleInput">classification name:</label> <input
-							type="text" class="form-control" id="formGroupExampleInput"
-							placeholder="classification Name" name="classificationName">
+						<label for="formGroupExampleInput2">Subclassification:</label> <input
+							type="text" class="form-control" id="formGroupExampleInput2"
+							placeholder="">
 					</div>
+
+				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<input type="submit" value="save classidfication">
-
+				<button type="button" class="btn btn-primary">Add</button>
 			</div>
-			</form>
 		</div>
 	</div>
 </div>
-<script language="javascript" type="text/javascript">
-	$(function() {
-		$("#classificationForm").submit(function(event) {
-			event.preventDefault();
-			console.log($("#classificationForm").serialize());
-			$.ajax({
-				url : 'classificationservlet',
-				type : 'post',
-				data : $("#classificationForm").serialize(),
-				success : function(data) {
-					alert(data)
-				}
-			});
-		});
-	});
-</script>
+
 <%@ include file="refracsement/footer.jsp"%>
